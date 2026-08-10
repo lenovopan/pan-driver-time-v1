@@ -287,7 +287,6 @@ function renderStopsGrid() {
       <div class="sn">${s.id}</div>
     </div>`).join('');
   const total = selectedStops.reduce((a,id) => { const s=stops.find(x=>x.id===id); return a+(s?parseFloat(s.rate):0); }, 0);
-  document.getElementById('fee-amt').textContent = '$' + total.toFixed(2);
   document.getElementById('stop-count').textContent = selectedStops.length + ' stop' + (selectedStops.length!==1?'s':'');
   document.getElementById('confirm-btn').disabled = selectedStops.length === 0;
 }
